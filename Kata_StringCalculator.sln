@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kata_StringCalculator", "Kata_StringCalculator\Kata_StringCalculator.csproj", "{BCE3B1A3-6CFE-41B3-A316-C4BB9BE0CEF6}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B7A7855E-8B5B-4DC7-A734-BF1E35E53E14}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
@@ -12,16 +10,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Specifications.docx = Specifications.docx
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringCalculator", "StringCalculator\StringCalculator.csproj", "{B8079606-0DF1-4540-B8E7-567EEDDDD733}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringCalculator.Tests", "StringCalculator.Tests\StringCalculator.Tests.csproj", "{B81946BC-26C5-4915-AB94-9874BCB4E069}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BCE3B1A3-6CFE-41B3-A316-C4BB9BE0CEF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BCE3B1A3-6CFE-41B3-A316-C4BB9BE0CEF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BCE3B1A3-6CFE-41B3-A316-C4BB9BE0CEF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BCE3B1A3-6CFE-41B3-A316-C4BB9BE0CEF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8079606-0DF1-4540-B8E7-567EEDDDD733}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8079606-0DF1-4540-B8E7-567EEDDDD733}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8079606-0DF1-4540-B8E7-567EEDDDD733}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8079606-0DF1-4540-B8E7-567EEDDDD733}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B81946BC-26C5-4915-AB94-9874BCB4E069}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B81946BC-26C5-4915-AB94-9874BCB4E069}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B81946BC-26C5-4915-AB94-9874BCB4E069}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B81946BC-26C5-4915-AB94-9874BCB4E069}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
