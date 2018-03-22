@@ -12,7 +12,7 @@ namespace StringCalculator
         /// Method to add numbers, as encoded in string input
         /// </summary>
         /// <param name="numbers">String of 0 to 2 numbers to add, separated by comma</param>
-        /// <returns>Integer of the </returns>
+        /// <returns>Integer of the additive result of the input numbers</returns>
         public static int Add(string numbers)
         {
             // Parse and Validate input
