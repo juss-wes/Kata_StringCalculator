@@ -48,7 +48,7 @@ namespace StringCalculator.Tests
         public void ReturnSumGivenFiveNumbers()
         {
             // Arrange
-            var input = "1\n2\n6\n12\n3";
+            var input = "1,2\n6\n12,3";
 
             // Act
             var result = StringCalculator.Add(input);
@@ -68,6 +68,19 @@ namespace StringCalculator.Tests
 
             // Assert
             Assert.AreEqual(27, result);
+        }
+
+        [TestMethod]
+        public void ReturnSumGivenFourNumbersAndACustomDelimiter()
+        {
+            // Arrange
+            var input = "//;\n4\n1,8;5";
+
+            // Act
+            var result = StringCalculator.Add(input);
+
+            // Assert
+            Assert.AreEqual(18, result);
         }
     }
 }
