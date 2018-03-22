@@ -9,7 +9,7 @@ namespace StringCalculator
     /// <summary>
     /// Class to handle string calculator functionality
     /// </summary>
-    public class StringCalculator
+    public static class StringCalculator
     {
         /* TODO - Implement you class here */
     }
