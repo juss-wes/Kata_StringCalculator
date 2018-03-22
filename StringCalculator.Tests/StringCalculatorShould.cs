@@ -35,7 +35,7 @@ namespace StringCalculator.Tests
         public void ReturnSumGivenTwoNumbers()
         {
             // Arrange
-            var input = "1,2";
+            var input = "1\n2";
 
             // Act
             var result = StringCalculator.Add(input);
@@ -48,7 +48,7 @@ namespace StringCalculator.Tests
         public void ReturnSumGivenFiveNumbers()
         {
             // Arrange
-            var input = "1,2,6,12,3";
+            var input = "1\n2\n6\n12\n3";
 
             // Act
             var result = StringCalculator.Add(input);
@@ -61,7 +61,7 @@ namespace StringCalculator.Tests
         public void ReturnSumGivenEightNumbers()
         {
             // Arrange
-            var input = "4,1,8,2,7,3,0,2";
+            var input = "4\n1\n8\n2\n7\n3\n0\n2";
 
             // Act
             var result = StringCalculator.Add(input);

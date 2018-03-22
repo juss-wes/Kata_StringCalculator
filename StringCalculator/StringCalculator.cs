@@ -11,13 +11,13 @@ namespace StringCalculator
         /// <summary>
         /// Method to add numbers, as encoded in string input
         /// </summary>
-        /// <param name="numbers">String of numbers to add, separated by comma</param>
+        /// <param name="numbers">String of numbers to add, separated by newline</param>
         /// <returns>Integer of the additive result of the input numbers</returns>
         public static int Add(string numbers)
         {
             // Parse and Validate input
             var parsedInput = (numbers ?? string.Empty)
-                .Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                .Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(i => int.Parse(i));
 
             // Calculate results
