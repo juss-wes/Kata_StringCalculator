@@ -1,8 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StringCalculator
 {
@@ -11,6 +8,27 @@ namespace StringCalculator
     /// </summary>
     public static class StringCalculator
     {
-        /* TODO - Implement you class here */
+        /// <summary>
+        /// Method to add numbers, as encoded in string input
+        /// </summary>
+        /// <param name="numbers">String of 0 to 2 numbers to add, separated by comma</param>
+        /// <returns>Integer of the </returns>
+        public static int Add(string numbers)
+        {
+            // Parse and Validate input
+            var parsedInput = (numbers ?? string.Empty)
+                .Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(i => int.Parse(i));
+
+            if (parsedInput.Count() > 2)
+                throw new ArgumentException("Only 0, 1, or 2 numbers are accepted, each separated by ','", nameof(numbers));
+
+            // Calculate results
+            var result = 0;
+            foreach (var num in parsedInput)
+                result += num;
+
+            return result;
+        }
     }
 }
