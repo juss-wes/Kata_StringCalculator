@@ -26,7 +26,7 @@ namespace StringCalculator
             {
                 if (num < 0)
                     invalidChars += $"{num},";
-                else
+                else if (num < 1000)
                     result += num;
             }
 

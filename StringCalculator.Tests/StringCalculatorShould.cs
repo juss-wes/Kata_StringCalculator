@@ -104,5 +104,18 @@ namespace StringCalculator.Tests
                 Assert.AreEqual("Negatives not allowed: -2,-3", e.Message);
             }
         }
+
+        [TestMethod]
+        public void ReturnSumButIgnoreAboveOneThousand()
+        {
+            // Arrange
+            var input = "18,2,2000,1000";
+
+            // Act
+            var result = StringCalculator.Add(input);
+
+            // Assert
+            Assert.AreEqual(20, result);
+        }
     }
 }
