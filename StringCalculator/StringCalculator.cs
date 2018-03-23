@@ -12,7 +12,7 @@ namespace StringCalculator
         /// <summary>
         /// Method to add numbers, as encoded in string input
         /// </summary>
-        /// <param name="numbers">String of numbers to add, separated by a given delimiter at the start of the string, such as: (\\[delimiter]/n[numbers])</param>
+        /// <param name="numbers">String of numbers to add, separated by delimiters either user defined, ',' or '\n'</param>
         /// <returns>Integer of the additive result of the input numbers</returns>
         public static int Add(string numbers)
         {
@@ -50,14 +50,12 @@ namespace StringCalculator
                 "\n"
             };
 
-            // Add the custom delimeter, if provided
+            // Add custom delimeters, if provided
             if (numbers.StartsWith("//"))
             {
-                var tempDelimiter = numbers.Substring(2, numbers.IndexOf("\n") - 2);
-                if (tempDelimiter.StartsWith("["))
-                    delimiters.Add(tempDelimiter.Substring(1, tempDelimiter.IndexOf("]") - 1));
-                else
-                    delimiters.Add(tempDelimiter);
+                var tempDelimiters = numbers.Substring(2, numbers.IndexOf("\n") - 2).Split(new char[] { '[' });
+                foreach (var delimiter in tempDelimiters)
+                    delimiters.Add(delimiter.Replace("]", ""));
 
                 numbers = numbers.Substring(numbers.IndexOf("\n") + 1);
             }

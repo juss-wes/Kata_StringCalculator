@@ -130,5 +130,18 @@ namespace StringCalculator.Tests
             // Assert
             Assert.AreEqual(6, result);
         }
+
+        [TestMethod]
+        public void ReturnSumGivenMultipleDelimiters()
+        {
+            // Arrange
+            var input = "//[|][%]\n1|2%3";
+
+            // Act
+            var result = StringCalculator.Add(input);
+
+            // Assert
+            Assert.AreEqual(6, result);
+        }
     }
 }
