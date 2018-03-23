@@ -117,5 +117,18 @@ namespace StringCalculator.Tests
             // Assert
             Assert.AreEqual(20, result);
         }
+
+        [TestMethod]
+        public void ReturnSumGivenLongerDelimiters()
+        {
+            // Arrange
+            var input = "//[|||]\n1|||2|||3";
+
+            // Act
+            var result = StringCalculator.Add(input);
+
+            // Assert
+            Assert.AreEqual(6, result);
+        }
     }
 }

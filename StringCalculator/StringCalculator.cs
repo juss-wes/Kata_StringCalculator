@@ -53,7 +53,12 @@ namespace StringCalculator
             // Add the custom delimeter, if provided
             if (numbers.StartsWith("//"))
             {
-                delimiters.Add(numbers.Substring(2, numbers.IndexOf("\n") - 2));
+                var tempDelimiter = numbers.Substring(2, numbers.IndexOf("\n") - 2);
+                if (tempDelimiter.StartsWith("["))
+                    delimiters.Add(tempDelimiter.Substring(1, tempDelimiter.IndexOf("]") - 1));
+                else
+                    delimiters.Add(tempDelimiter);
+
                 numbers = numbers.Substring(numbers.IndexOf("\n") + 1);
             }
 
