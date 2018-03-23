@@ -16,7 +16,34 @@ namespace StringCalculator
         /// <returns>Integer of the additive result of the input numbers</returns>
         public static int Add(string numbers)
         {
-            // Parse and Validate input
+            // Parse
+            var parsedInput = ParseInput(numbers);
+
+            // Calculate results
+            var result = 0;
+            var invalidChars = string.Empty;
+            foreach (var num in parsedInput)
+            {
+                if (num < 0)
+                    invalidChars += $"{num},";
+                else
+                    result += num;
+            }
+
+            if (!string.IsNullOrEmpty(invalidChars))
+                throw new ArgumentException($"Negatives not allowed: {invalidChars.TrimEnd(new char[] { ',' })}");
+
+            return result;
+        }
+
+        /// <summary>
+        /// Separated private method to parse the numerical input and delimiter selection
+        /// </summary>
+        /// <param name="numbers">Input to parse</param>
+        /// <returns>Enumerable of integers from the input string of numbers</returns>
+        private static IEnumerable<int> ParseInput(string numbers)
+        {
+            // Default delimiters
             var delimiters = new List<string>()
             {
                 ",",
@@ -31,16 +58,9 @@ namespace StringCalculator
             }
 
             // Parse the numerical input
-            var parsedInput = (numbers ?? string.Empty)
+            return (numbers ?? string.Empty)
                 .Split(delimiters.ToArray(), StringSplitOptions.RemoveEmptyEntries)
                 .Select(i => int.Parse(i));
-
-            // Calculate results
-            var result = 0;
-            foreach (var num in parsedInput)
-                result += num;
-
-            return result;
         }
     }
 }

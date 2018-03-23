@@ -1,3 +1,4 @@
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace StringCalculator.Tests
@@ -81,6 +82,27 @@ namespace StringCalculator.Tests
 
             // Assert
             Assert.AreEqual(18, result);
+        }
+
+        [TestMethod]
+        public void ReturnExceptionGivenNegatives()
+        {
+            // Arrange
+            var input = "-2,1,8,-3";
+
+            // Act
+            try
+            {
+                var result = StringCalculator.Add(input);
+
+                // Failed if got here with no exception
+                Assert.Fail();
+            }
+            catch (ArgumentException e)
+            {
+                // Assert
+                Assert.AreEqual("Negatives not allowed: -2,-3", e.Message);
+            }
         }
     }
 }
