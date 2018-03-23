@@ -143,5 +143,18 @@ namespace StringCalculator.Tests
             // Assert
             Assert.AreEqual(6, result);
         }
+
+        [TestMethod]
+        public void ReturnSumGivenMultipleLongerDelimiters()
+        {
+            // Arrange
+            var input = "//[||][%%][###]\n1||2%%3,5###9";
+
+            // Act
+            var result = StringCalculator.Add(input);
+
+            // Assert
+            Assert.AreEqual(20, result);
+        }
     }
 }
